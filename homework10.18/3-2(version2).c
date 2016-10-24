@@ -32,5 +32,6 @@ int main(void)
     {
         printf("E\n");
     }
+    return 0;
     
 }
