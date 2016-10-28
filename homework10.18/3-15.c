@@ -10,11 +10,10 @@
 
 int main(void) {
     double a,s;
-    int i;
+    a=0;
+    int i=0;//注意把条件的初始赋值写在do循环外
     do
     {
-        i=0;
-        a=0;
         s=a+5000;
         a=s+0.32*s;
         i=i+1;
