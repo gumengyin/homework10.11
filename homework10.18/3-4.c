@@ -7,7 +7,6 @@
 //
 
 #include <stdio.h>
-int JudgeCharacterType(int ch);
 int main(void) {
     int a=0;
     char ch;
