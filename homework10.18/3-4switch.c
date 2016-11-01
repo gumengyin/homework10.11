@@ -7,24 +7,37 @@
 //
 
 #include <stdio.h>
-
-#include <stdio.h>
-int JudgeCharacterType(int ch);
 int main(void) {
-    int c;
+    char ch;
     printf("请输入一串字符\n");
-    c=getchar();
-    JudgeCharacterType(c);
-    printf("The ASCII of %c'is%d\n\n",c,c);
-    return 0;
-}
-int JugdeCharacterType(int ch)
-{
+    scanf("%c",&ch);
+    ch=getchar();
+    int i=0;
     switch(ch)
     {
-        case '0':case'1':case'2':case'3':case'4':case'5':case'6':case'7':case'8':case'9':
-            printf("%c:数字个数为",ch);
+        case'0':
+            i=i+1;
+        case'1':
+            i=i+1;
+        case'2':
+            i=i+1;
+        case'3':
+            i=i+1;
+        case'4':
+            i=i+1;
+        case'5':
+            i=i+1;
+        case'6':
+            i=i+1;
+        case'7':
+            i=i+1;
+        case'8':
+            i=i+1;
+        case'9':
+            i=i+1;
             break;
     }
-    return ch;
+    printf("数字个数为%d",i);
+    return 0;
+    
 }
