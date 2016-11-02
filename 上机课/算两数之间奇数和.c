@@ -17,10 +17,14 @@ int main() {
     {
         int d=0;
         scanf("%d %d",&a,&b);
-        for (c=a;c<=b;c++)
-        {
-            if (c%2!=0)
-                d=d+c;
+        if (a<=0||b<=0)
+            printf("error");
+        else if (a>0&&b>0){
+            for (c=a;c<=b;c++)
+            {
+                if (c%2!=0)
+                    d=d+c;
+            }
         }
         printf("        %d",d);
     }
