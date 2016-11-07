@@ -16,7 +16,8 @@ int main(void){
     return 0;
 }
 int Fun(int n){
-    int a,b=0.1,c=0;
+    int a,c=0;
+    double b=0.1;//注意数据类型
     if (n<8) {
         c=n;
     }
