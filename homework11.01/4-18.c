@@ -7,43 +7,53 @@
 //
 
 #include <stdio.h>
-int Fun(int n);
 int main() {
-    int n;
-    printf("please inputa integer\n");
-    scanf("%d",&n);
-    Fun(n);
-    return 0;
-}
-int Fun(int n){
-    int a;
-    while (n!=0) {
-        a=n%10;
-        n=n/10;
-    switch (a) {
+    char x;
+    printf("please input a integer\n");
+    scanf("%c",&x);
+    x=getchar();
+    switch (x) {
         case'0':
             printf("48-");
         case'1':
-             printf("49-");
+            printf("49-");
         case'2':
-             printf("50-");
+            printf("50-");
         case'3':
-             printf("51-");
+            printf("51-");
         case'4':
-             printf("52-");
+            printf("52-");
         case'5':
-             printf("53-");
+            printf("53-");
         case'6':
-             printf("54-");
+            printf("54-");
         case'7':
-             printf("55-");
+            printf("55-");
         case'8':
-             printf("56-");
+            printf("56-");
         case'9':
-             printf("57-");
+            printf("57-");
             break;
     }
-    }
-
-        return 0;
+    
+    return 0;
 }
+/*
+ 用数组的方法
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+ void int_char(int n){
+ char b[20];
+ itoa(n,b,10);   ／／C99不支持
+ b[strlen(b)]='-';
+ printf("%s\n",b);
+ }
+ int main() {
+ int n;
+ while (scanf("%d",&n)==1) {
+ int_char(n);
+ return 0;
+ }
+ }
+ */
