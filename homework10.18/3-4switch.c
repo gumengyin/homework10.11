@@ -13,30 +13,43 @@ int main(void) {
     scanf("%c",&ch);
     ch=getchar();
     int i=0;
-    switch(ch)
-    {
-        case'0':
-            i=i+1;
-        case'1':
-            i=i+1;
-        case'2':
-            i=i+1;
-        case'3':
-            i=i+1;
-        case'4':
-            i=i+1;
-        case'5':
-            i=i+1;
-        case'6':
-            i=i+1;
-        case'7':
-            i=i+1;
-        case'8':
-            i=i+1;
-        case'9':
-            i=i+1;
-            break;
+    while (ch!='\n') {
+        switch(ch)
+        {
+            case'0':
+                i=i+1;
+                break;
+            case'1':
+                i=i+1;
+                break;
+            case'2':
+                i=i+1;
+                break;
+            case'3':
+                i=i+1;
+                break;
+            case'4':
+                i=i+1;
+                break;
+            case'5':
+                i=i+1;
+                break;
+            case'6':
+                i=i+1;
+                break;
+            case'7':
+                i=i+1;
+                break;
+            case'8':
+                i=i+1;
+                break;
+            case'9':
+                i=i+1;
+                break;
+        }
+        ch=getchar();
     }
+
     printf("数字个数为%d",i);
     return 0;
     
