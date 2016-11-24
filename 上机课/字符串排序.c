@@ -7,48 +7,54 @@
 //
 
 #include <stdio.h>
-void Sort(char x);
-int main() {
-    char n,x=n;
-    while(scanf("%c",&n)!=EOF){
-        int a=0;
-        n=getchar();
-        while (n!='\n') {
-            if ((n<48)||(n>=58&&n<=64)||(n>=91&&n<=96)||(n>=123)) {
-                a=a+1;
-            }
-            n=getchar();
+#include <string.h>
+int main (void) {
+    char str[100];
+    while (gets(str)!=NULL) {
+        if (str[0]!=101&&str[1]!=120&&str[2]!=105&&str[3]!=116) {
+            void ps(char str[]);
+            ps(str);
+            
         }
-        if (a>0) {
-            printf("Input Error\n");
+        if (str[0]==101&&str[1]==120&&str[2]==105&&str[3]==116) {
+            printf("End Of Input\n");
+            break;
         }
-        else{
-            Sort(x);
-        }
+    }
     return 0;
-    }
 }
-    
-void Sort(char x){
-    int b,i,m=0;
-    char a[printf("%c",x)],out[printf("%c",x)];
-    printf("%c",x);
-    x=getchar();
-    while (x!='\n') {
-        for (i=0;i<printf("%c",x); i++) {
-            a[i]=x;
+void ps(char str[]) {
+    int i,j,a=0;
+    char t;
+    for(i=0;i<strlen(str)-1;i++) {
+        if ((str[i]<48)||(str[i]>=58&&str[i]<=64)||(str[i]>=91&&str[i]<=96)||(str[i]>=123)) {
+            a=a+1;
         }
-        x=getchar();
     }
-    for (b=48; b<=122;b++) {
-        for (i=0;i<printf("%c",x); i++) {
-            if(a[i]==b){
-                out[m]=a[i];
-                m=m+1;
+    if (a>0) {
+        printf("Input Error\n");
+    }
+    else{
+        for(i=0;str[i]!='\0';i++) {
+            printf("%c",str[i]);
+        }
+        if (str[i]=='\0') {
+            printf("\n");
+        }
+        for(i=0;i<strlen(str)-1;i++) {
+            for(j=i+1;j<strlen(str);j++) {
+                if(str[i]>str[j]) {
+                    t=str[i];
+                    str[i]=str[j];
+                    str[j]=t;
+                }
             }
         }
-        for (m=0;m<printf("%c",x); m++) {
-            printf("%c",out[m]);
+        for(i=0;str[i]!='\0';i++) {
+            printf("%c",str[i]);
+        }
+        if (str[i]=='\0') {
+            printf("\n");
         }
     }
 }
