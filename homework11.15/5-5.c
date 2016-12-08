@@ -11,10 +11,10 @@
 void Fun(int n);
 int main() {
     char *p[3]={"save","open","quit"};
-    char *s[50]; //gets中存入的是几个字符组成的数组还是字符串 为什么要用指针呢
+    char s[50]; //gets中存入的是几个字符组成的数组还是字符串 为什么要用指针呢
     int i;
     printf("input a string:\n");
-    gets(s);
+    scanf("%s",s); //  注意读取字符串格式
     for (i=0; i<3; i++) {
         if (strcmp(s,p[i])==0) {
             Fun(i);
