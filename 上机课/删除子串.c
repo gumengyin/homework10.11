@@ -23,7 +23,7 @@ int main() {
     if (m==strlen(str1)) {
         printf("NULL\n");
     }
-    else if (m<2){
+    else if (m<strlen(str2)){
         printf("NO\n");
     }
     else{
