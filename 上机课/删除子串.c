@@ -22,7 +22,7 @@ int main() {
     gets(str1);
     gets(str2);
     for (i=0; i<strlen(str1);i++) {
-        for (j=0; j<strlen(str2); j++) {
+       // for (j=0; j<strlen(str2); j++) {
             if (strlen(str2)==1) {
                 if (str1[i]==str2[j]) {
                     m=m+1;
@@ -30,8 +30,9 @@ int main() {
             }
             else if ((str1[i]==str2[j])&&((str1[i+1]==str2[j+1])||(str1[i-1]==str2[j-1]))) {
                 m=m+1;
+                j=j+1;
             }
-        }
+       // }
     }
     if (m==strlen(str1)) {
         printf("NULL\n");
