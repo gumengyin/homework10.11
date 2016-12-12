@@ -33,21 +33,16 @@ int main() {
         }//冒泡排序法 第二个循环把小标的值比较一遍
     }//第一个循环第二个循环的数再比较一遍
     for (i=0; i<n; i++) {
-        if (student[i].sum!=student[i+1].sum) {
-            printf("[name:%s,sum:%.f,sno:%d]\n",student[i].name,student[i].sum,student[i].sno);
-        }
-        else{
-            char *p=student[i].name;
-            char *q=student[i+1].name;
-            if (p>q) {
-                printf("[name:%s,sum:%.f,sno:%d]\n",student[i+1].name,student[i+1].sum,student[i+1].sno);
-                printf("[name:%s,sum:%.f,sno:%d]\n",student[i].name,student[i].sum,student[i].sno);
-            }
-            else{
-                printf("[name:%s,sum:%.f,sno:%d]\n",student[i].name,student[i].sum,student[i].sno);
-                printf("[name:%s,sum:%.f,sno:%d]\n",student[i+1].name,student[i+1].sum,student[i+1].sno);
+        if (student[i].sum==student[i+1].sum) {
+            if (student[i].name[0]>student[i+1].name[0]) {
+                temp=student[i];
+                student[i]=student[i+1];
+                student[i+1]=temp;
             }
         }
+    }
+    for (i=0; i<n; i++) {
+        printf("[name:%s,sum:%.f,sno:%d]\n",student[i].name,student[i].sum,student[i].sno);
     }
     return 0;
 }
