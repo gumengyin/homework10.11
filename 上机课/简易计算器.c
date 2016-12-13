@@ -23,9 +23,11 @@ int main() {
         }
         else{
             printf("Input Error\n");
+            flag=1;
             break;
         }
     }
+    if (flag==0) {
         for (i=0; i<n; i++) {
             var1=var1*10+digit[i];
         }
@@ -44,7 +46,7 @@ int main() {
         if (digit[n]==47) {
             printf("%d\n",var1/var2);
         }
-    
+    }
     return 0;
 }
 //用字符形式输入数字 字符转数字 -48/-'0'
