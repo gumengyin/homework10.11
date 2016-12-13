@@ -16,5 +16,8 @@ int main() {
         int salary;
         char address[100];
     };
+    struct staff staff;
+    scanf("%d %s %s %s %d %s",&staff.sno,staff.name,staff.sex,staff.identity,&staff.salary,staff.address);
+    printf("%d %s %s %s %d %s",staff.sno,staff.name,staff.sex,staff.identity,staff.salary,staff.address);
     return 0;
 }
