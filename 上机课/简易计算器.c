@@ -12,22 +12,14 @@
 int main() {
     char digit[20];
     gets(digit);
-    int i,n=0,m1=0,m2=0,flag;
-    double var1=0,var2=0,a=0.1;
+    int i,n=0,flag,var1=0,var2=0;
+    double sum;
     for (i=0; i<strlen(digit); i++) {
         if (digit[i]>=48&&digit[i]<=57) {
             digit[i]=digit[i]-'0';
         }
         else if (digit[i]==42||digit[i]==43||digit[i]==45||digit[i]==47) {
             n=i;
-            continue;
-        }
-        else if(digit[i]==46){
-            if (n==0) {
-                m1=i;
-            }
-            else
-                m2=i;
             continue;
         }
         else{
@@ -37,46 +29,35 @@ int main() {
         }
     }
     if (flag==0) {
-        if (m1==0) {
-            for (i=0; i<n; i++) {
-                var1=var1*10+digit[i];
-            }
+        for (i=0; i<n; i++) {
+            var1=var1*10+digit[i];
         }
-        if (m1!=0) {
-            for (i=0; i<m1; i++) {
-                var1=var1*10+digit[i];
-            }
-            for (i=m1+1; i<n; i++) {
-                var1=var1+digit[i]*a;
-                a=a*0.1;
-            }
+        for (i=n+1; i<strlen(digit); i++) {
+            var2=var2*10+digit[i];
         }
-        a=0.1;
-        if (m2==0) {
-            for (i=n+1; i<strlen(digit); i++) {
-                var2=var2*10+digit[i];
-            }
-        }
-        if (m2!=0) {
-            for (i=n+1; i<m2; i++) {
-                var2=var2*10+digit[i];
-            }
-            for (i=m2+1; i<strlen(digit); i++) {
-                var2=var2+digit[i]*a;
-                a=a*0.1;
-            }
-        }
-        if (digit[n]==42) {
-            printf("%.2f\n",var1*var2);
-        }
-        if (digit[n]==43) {
-            printf("%.2f\n",var1+var2);
-        }
-        if (digit[n]==45) {
-            printf("%.2f\n",var1-var2);
-        }
-        if (digit[n]==47) {
-            printf("%.2f\n",var1/var2);
+        switch(digit[n])
+        {
+            case '+':
+                sum=var1+var2;
+                printf("%.2f\n",sum);
+                break;
+            case '-':
+                sum=var1/var2;
+                printf("%.2f\n",sum);
+                break;
+            case '*':
+                sum=var1/var2;
+                printf("%.2f\n",sum);
+                break;
+            case '/':
+                if (var2==0) {
+                    printf("Input Error\n");
+                }
+                else{
+                    sum=var1/var2;
+                    printf("%.2f\n",sum);
+                }
+                break;
         }
     }
     return 0;
