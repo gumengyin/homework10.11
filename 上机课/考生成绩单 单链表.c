@@ -6,8 +6,10 @@
 //  Copyright © 2016年 顾梦寅Joyce. All rights reserved.
 //
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 int main() {
-    int i,j,n=0;
+    int i=0,j,n=0;
     struct student{
         char name[21];//姓名
         int sno;//学号
@@ -19,12 +21,11 @@ int main() {
     };
     struct student student[10],*head,*p;
     struct student temp;
-    for (i=0; i<10; i++) {
-        scanf("%s ",student[i].name);
-        if (student[i].name[0]=='e') {
-            break;
-        }
-        scanf("%d %lf %lf %lf",&student[i].sno,&student[i].chinese,&student[i].english,&student[i].math);//数组scanf输入不用&
+    scanf("%s %d %lf %lf %lf",student[i].name,&student[i].sno,&student[i].chinese,&student[i].english,&student[i].math);
+    while (scanf("%s %d %lf %lf %lf",student[i].name,&student[i].sno,&student[i].chinese,&student[i].english,&student[i].math)==5) {
+        i=i+1;
+        scanf("%s %d %lf %lf %lf",student[i].name,&student[i].sno,&student[i].chinese,&student[i].english,&student[i].math);
+        //数组scanf输入不用&
         student[i].sum=student[i].chinese+student[i].english+student[i].math;
         n=n+1;
     }
