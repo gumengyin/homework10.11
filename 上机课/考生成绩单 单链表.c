@@ -27,8 +27,8 @@ int main() {
             scanf("%lf",&student[n].chinese);
             scanf("%lf",&student[n].english);
             scanf("%lf",&student[n].math);
-            n++;
             student[n].sum=student[n].chinese+student[n].english+student[n].math;
+            n++;
         }
         else{
             flag=0;
