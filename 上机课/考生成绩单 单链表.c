@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <string.h>
 int main() {
-    int i=0,j,n=0;
+    int i,j,n=0,flag;
     struct student{
         char name[21];//姓名
         int sno;//学号
@@ -21,13 +21,19 @@ int main() {
     };
     struct student student[10],*head,*p;
     struct student temp;
-    scanf("%s %d %lf %lf %lf",student[i].name,&student[i].sno,&student[i].chinese,&student[i].english,&student[i].math);
-    while (scanf("%s %d %lf %lf %lf",student[i].name,&student[i].sno,&student[i].chinese,&student[i].english,&student[i].math)==5) {
-        i=i+1;
-        scanf("%s %d %lf %lf %lf",student[i].name,&student[i].sno,&student[i].chinese,&student[i].english,&student[i].math);
-        //数组scanf输入不用&
-        student[i].sum=student[i].chinese+student[i].english+student[i].math;
-        n=n+1;
+    while (scanf("%s",student[n].name)==1) {
+        if (strcmp(student[n].name,"exit")!=0) {
+            scanf("%d",&student[n].sno);
+            scanf("%lf",&student[n].chinese);
+            scanf("%lf",&student[n].english);
+            scanf("%lf",&student[n].math);
+            n++;
+            student[n].sum=student[n].chinese+student[n].english+student[n].math;
+        }
+        else{
+            flag=0;
+            break;
+        }
     }
     for (i=0; i<n; i++) {
         for (j=0; j<n-i; j++) {
@@ -36,8 +42,8 @@ int main() {
                 student[j]=student[j+1];
                 student[j+1]=temp;
             }
-        }//冒泡排序法 第二个循环把小标的值比较一遍
-    }//第一个循环第二个循环的数再比较一遍
+        }
+    }
     for (i=0; i<n; i++) {
         if (student[i].sum==student[i+1].sum) {
             if (student[i].name[0]>student[i+1].name[0]) {
@@ -55,8 +61,11 @@ int main() {
     p=head;
     printf("[");
     do{
-        printf("{name:%s,sum:%.f,sno:%d},",p->name,p->sum,p->sno);
+        printf("{name:%s,sum:%.f,sno:%d}",p->name,p->sum,p->sno);
         p=p->next;
+        if (p!=NULL) {
+            printf(",");
+        }
     }while (p!=NULL);
     printf("]");
     return 0;
