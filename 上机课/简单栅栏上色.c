@@ -17,15 +17,24 @@ int main() {
         printf("Input Error\n");
     }
     else{
-        for (i=0; i<k; i++) {
-            ways=var*ways;
-            var=var-1;
+        if (k<m) {
+            for (i=0; i<k; i++) {
+                ways=var*ways;
+                var=var-1;
+            }
+            var=var+1;
+            for (i=k; i<m; i++) {
+                ways=ways*var;
+            }
+            printf("%d\n",ways);
         }
-        var=var+1;
-        for (i=k; i<m; i++) {
-            ways=ways*var;
+        if(k>=m){
+            for (i=0; i<m; i++) {
+                ways=var*ways;
+                var=var-1;
+            }
+            printf("%d\n",ways);
         }
     }
-    printf("%d\n",ways);
     return 0;
 }
