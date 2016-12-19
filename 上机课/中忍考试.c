@@ -12,9 +12,9 @@ int main() {
     int n,l,k,y,i,j,var;
     scanf("%d%d%d%d",&n,&l,&k,&y);
     int sum[n];
-    for (i=0; i<n; i++) {
+    for (i=0; i<n+1; i++) {
         char ch[100];
-        gets(ch);
+        gets(ch);//怎么解决读入上一行回车的问题
         sum[i]=0;
         for (j=0; j<strlen(ch); j++) {
             if(ch[j]=='A'){
@@ -27,9 +27,8 @@ int main() {
                 sum[i]=sum[i]+3*l+3*k+2*y;
             }
         }
-        printf("%d\n",sum[i]);
     }
-   for (i=0; i<n; i++) {
+    for (i=0; i<n; i++) {
         for (j=0; j<n-i; j++) {
             if (sum[i]<sum[i+1]) {
                 var=sum[i];
@@ -38,6 +37,6 @@ int main() {
             }
         }
     }
-    printf("%d\n",sum[n]);
+    printf("%d\n",sum[n-1]);
     return 0;
 }
