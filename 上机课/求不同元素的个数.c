@@ -8,27 +8,22 @@
 
 #include <stdio.h>
 void Fun(int digit[],int m){
-    int i;
+    int i,j,temp,out=0;
     for (i=0; i<m; i++) {
-        printf("%d",digit[i]);}
-    /*int i,j,temp,out=0;
-     for (i=0; i<m; i++) {
-     for (j=0; j<m-i; j++) {
-     if (digit[j]<digit[j+1]) {
-     digit[j]=temp;
-     digit[j]=digit[j+1];
-     digit[j+1]=temp;
-     }
-     }
-     }
-     for (i=0; i<m; i++) {
-     printf("%d",digit[i]);}
-     for (i=0; i<m; i++) {
-     if (digit[i]!=digit[i+1]) {
-     out=out+1;
-     }
-     }
-     printf("%d",out);*/
+        for (j=0; j<m-i; j++) {
+            if (digit[j]>digit[j+1]) {
+                temp=digit[j+1];
+                digit[j+1]=digit[j];
+                digit[j]=temp;
+            }
+        }
+    }
+    for (i=0; i<m; i++) {
+        if (digit[i]!=digit[i+1]) {
+            out=out+1;
+        }
+    }
+    printf("%d",out);
 }
 int main() {
     int n,i;
@@ -45,5 +40,3 @@ int main() {
     
     return 0;
 }
-
-//&&(i!=m))||(digit[i]!=digit[i-1]&&(i!=0))
