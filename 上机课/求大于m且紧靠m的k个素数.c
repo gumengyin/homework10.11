@@ -13,19 +13,25 @@ int main() {
     for (i=0; i<n; i++) {
         int m,k,j,a,b=0;
         scanf("%d%d",&m,&k);
-        j=m+1;
-        while (b<k) {
-            for (a=2; a<j; a++) {
-                if (j%a==0) {
-                    break;
+        for(j=m+1;j<=1000;j++)
+        {
+            if(j==2)
+                printf("%d ",j);
+            else
+                for(a=2;a<j;a++){
+                    if(j%a==0){
+                        break;
+                    }
+                    if(a==j-1){
+                        printf("%d ",j);
+                        b=b+1;
+                    }
                 }
-                if (a==j-1) {
-                    printf("%d ",a);
-                    b=b+1;
-                }
+            if (b==k) {
+                break;
             }
-            j=j+1;
         }
+        
     }
     return 0;
 }
