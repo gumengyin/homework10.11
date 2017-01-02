@@ -16,8 +16,10 @@ int main() {
         int var[k];
         for(j=m+1;j<=1000;j++)
         {
-            if(j==2)
-                printf("%d ",j);
+            if(j==2){
+                var[b]=j;
+                b=b+1;
+            }
             else
                 for(a=2;a<j;a++){
                     if(j%a==0){
