@@ -27,7 +27,7 @@ int main() {
             }
         }
         for (j=0; j<m; j++) {
-            printf("%d",a[j]);
+            printf("%d ",a[j]);
         }
     }
     return 0;
