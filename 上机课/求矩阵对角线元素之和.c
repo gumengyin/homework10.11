@@ -19,7 +19,12 @@ int main() {
             sum=a[j][k]+sum;
             k=k+1;
         }
-        printf("%d\n",sum);
+        k=0;
+        for (j=4; j>=0; j--) {
+            sum=a[j][k]+sum;
+            k=k+1;
+        }
+        printf("%d\n",sum-a[2][2]);
     }
     return 0;
 }
