@@ -13,6 +13,7 @@ int main() {
     for (i=0; i<n; i++) {
         int m,k,j,a,b=0;
         scanf("%d%d",&m,&k);
+        int var[k];
         for(j=m+1;j<=1000;j++)
         {
             if(j==2)
@@ -23,7 +24,7 @@ int main() {
                         break;
                     }
                     if(a==j-1){
-                        printf("%d ",j);
+                        var[b]=j;
                         b=b+1;
                     }
                 }
@@ -31,7 +32,10 @@ int main() {
                 break;
             }
         }
-        
+        for (j=0; j<k-1; j++) {
+            printf("%d ",var[j]);
+        }
+        printf("%d\n",var[k-1]);
     }
     return 0;
 }
