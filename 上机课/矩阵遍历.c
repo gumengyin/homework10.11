@@ -31,6 +31,8 @@ int main() {
             printf("%d",var[i][j]);
             t++;
             i++;
+            if((t-1) != (s*n))
+                printf(" ");
         }
         i--;
         if((t-1) == (s*n)){
@@ -43,6 +45,8 @@ int main() {
             printf("%d",var[i][j]);
             t++;
             j++;
+            if((t-1) != (s*n))
+                printf(" ");
         }
         j--;
         if((t-1) == (s*n)){
@@ -55,6 +59,8 @@ int main() {
             printf("%d",var[i][j]);
             t++;
             i--;
+            if((t-1) != (s*n))
+                printf(" ");
         }
         i++;
         if((t-1) == (s*n)){
@@ -67,6 +73,8 @@ int main() {
             printf("%d",var[i][j]);
             t++;
             j--;
+            if((t-1) != (s*n))
+                printf(" ");
         }
         j++;
         if((t-1) == (s*n)){
