@@ -22,27 +22,59 @@ int main() {
         }
         printf("\n");
     }
-    int k=0,m,sum=s*n;
-    j=0,i=0;
-    while (k!=sum) {
-        for (m=0; m<s; m++) {
-            while (j<s) {
-                printf("%d",var[j][m]);
-                j++;
-                k++;
-            }
+    int up=0,down=s-1;
+    int left=0,right=n-1;  //上左右下看作矩阵边界
+    i=up,j=left;
+    int t=1;
+    while(1){
+        while(i != down+1){  //向下输出
+            printf("%d",var[i][j]);
+            t++;
+            i++;
+        }
+        i--;
+        if((t-1) == (s*n)){
+            printf("\n");
             break;
         }
-        s=s-1;
-        for (m=0; m<s; m++) {
-            while (i<n) {
-                printf("%d",var[j][i]);
-                i++;
-                k++;
-            }
+        left++;
+        j=left;
+        while(j != right+1){ //横向右输出
+            printf("%d",var[i][j]);
+            t++;
+            j++;
+        }
+        j--;
+        if((t-1) == (s*n)){
+            printf("\n");
             break;
         }
-        n=n-1;
+        down--;
+        i=down;
+        while(i != up-1){  //向上输出
+            printf("%d",var[i][j]);
+            t++;
+            i--;
+        }
+        i++;
+        if((t-1) == (s*n)){
+            printf("\n");
+            break;
+        }
+        right--;
+        j=right;
+        while(j != left-1){  //横向左输出
+            printf("%d",var[i][j]);
+            t++;
+            j--;
+        }
+        j++;
+        if((t-1) == (s*n)){
+            printf("\n");
+            break;
+        }
+        up++;
+        i=up;
     }
     return 0;
 }
