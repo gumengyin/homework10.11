@@ -10,29 +10,27 @@
 #include <stdio.h>
 int main() {
     int sum,i,j,n;
-    int flag=0;
     scanf("%d",&n);
-    int a[n];
-    for (sum=10; ; sum++) {
+    for (sum=1+n; ; sum+=n) {//sum+=n优化时间
         j=sum;
         i=0;
-        while ((j-1)%n==0) {
-            a[i]=(j-1)/n;
+        while ((j-1)%n==0&&j-1>=n) {//j-1>=n很重要
             i=i+1;
             if (i==n) {
                 printf("%d\n",sum);
-                flag=1;
-            }
-            else
-                j=(j-1)*(n-1)/n;
-            }
-            if (flag) {
                 break;
             }
+            else
+                j=(j-1)-(j-1)/n;
         }
-        if (flag){
-            for (i=0; i<n; i++) {
-                printf("%d\n",a[i]);
+        if (i==n) {
+            break;
+        }
+    }
+    if (i==n){
+        for (i=1;i<=n;i++){
+            printf("%d\n",(sum-1)/n);
+            sum=sum-1-(sum-1)/n;
         }
     }
     return 0;
