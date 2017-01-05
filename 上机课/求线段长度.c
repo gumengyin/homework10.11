@@ -8,11 +8,11 @@
 
 #include <stdio.h>
 int main() {
-    int n,i,j,length=0,diff;
+    int n,i,j;
     scanf("%d",&n);
-    int digit[n];
+    long long digit[n],length=0,diff;
     for (i=0; i<n; i++) {
-        scanf("%d",&digit[i]);
+        scanf("%lld",&digit[i]);
     }
     for (i=0; i<n-1; i++) {
         for (j=i+1; j<n; j++) {
@@ -23,6 +23,6 @@ int main() {
             length=length+diff;
         }
     }
-    printf("%d\n",length);
+    printf("%lld\n",length);
     return 0;
 }
